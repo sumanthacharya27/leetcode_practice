@@ -8,15 +8,16 @@ class Solution {
         return "";
     }
     public boolean isPalindrome(String word){
-        char[] alpha= word.toCharArray();
-        String palindrome="";
-        for(int i=word.length()-1;i>=0;i--){
-            palindrome+=alpha[i];
-
-        } 
-        if(palindrome.equals(word)){
-            return true;
+        int start=0;
+        int end=word.length()-1;
+        while(start<end){
+            if(!(word.charAt(start)==(word.charAt(end)))){
+                return false;
+            }
+            start++;
+            end--;
         }
-        return false;
+        
+        return true;
     }
 }
