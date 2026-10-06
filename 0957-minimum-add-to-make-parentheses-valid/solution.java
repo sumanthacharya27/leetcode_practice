@@ -1,0 +1,17 @@
+class Solution {
+    public int minAddToMakeValid(String s) {
+        int opencount=0;
+        int min=s.length();
+        for(int i=0;i<s.length();i++){
+            if(s.charAt(i)=='('){
+                opencount++;
+            }else{
+                if(opencount>0){
+                    opencount-=1;
+                    min-=2;
+                }
+            }
+        }
+        return min;
+    }
+}
